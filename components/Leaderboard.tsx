@@ -2,7 +2,7 @@ import type { Listener } from '@/lib/data'
 
 export default function Leaderboard({ listeners }: { listeners: Listener[] }) {
   return (
-    <div className="rounded-2xl border border-hairline bg-surface p-[26px]">
+    <div className="rounded-2xl border border-hairline bg-surface p-5 md:p-[26px]">
       <div className="mb-5 text-[13px] font-semibold text-smoke">Top 10 listeners</div>
       <div>
         {listeners.map((l, i) => (

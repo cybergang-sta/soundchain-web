@@ -1,9 +1,9 @@
 export default function UploadCards() {
   return (
-    <div className="rounded-2xl border border-hairline bg-surface p-[26px]">
+    <div className="rounded-2xl border border-hairline bg-surface p-5 md:p-[26px]">
       <div className="mb-5 text-[13px] font-semibold text-smoke">Add new content</div>
 
-      <div className="mb-[14px] flex items-center gap-[18px] rounded-2xl border border-dashed border-hairline p-[30px]">
+      <div className="mb-[14px] flex items-center gap-3 rounded-2xl border border-dashed border-hairline p-4 md:gap-[18px] md:p-[30px]">
         <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-bronze/10">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C89B3C" strokeWidth="1.8">
             <path d="M12 3v12m0-12 4 4m-4-4-4 4" />
@@ -16,7 +16,7 @@ export default function UploadCards() {
         </div>
       </div>
 
-      <div className="flex items-center gap-[18px] rounded-2xl border border-dashed border-hairline p-[30px]">
+      <div className="flex items-center gap-3 rounded-2xl border border-dashed border-hairline p-4 md:gap-[18px] md:p-[30px]">
         <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-bronze/10">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C89B3C" strokeWidth="1.8">
             <circle cx="12" cy="12" r="9" />

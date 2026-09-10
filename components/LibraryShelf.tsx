@@ -3,11 +3,11 @@ import type { Folder } from '@/lib/data'
 export default function LibraryShelf({ folders }: { folders: Folder[] }) {
   return (
     <div>
-      <div className="mb-[18px] flex items-baseline justify-between">
-        <h2 className="font-serif text-[22px] font-normal">Your Library</h2>
-        <span className="text-[12.5px] text-smoke">Manage folders</span>
+      <div className="mb-3 flex items-baseline justify-between md:mb-[18px]">
+        <h2 className="font-serif text-[18px] font-normal md:text-[22px]">Your Library</h2>
+        <span className="text-[12px] text-smoke md:text-[12.5px]">Manage folders</span>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-4">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] md:gap-4">
         {folders.map((f) => (
           <div key={f.name} className="flex flex-col gap-[10px] rounded-[14px] border border-hairline bg-surface p-4">
             <div className="grid h-[76px] grid-cols-2 gap-[3px] overflow-hidden rounded-lg">

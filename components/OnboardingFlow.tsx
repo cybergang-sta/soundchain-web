@@ -3,43 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Check } from 'lucide-react'
-
-type Tier = {
-  id: string
-  name: string
-  price: string
-  tagline: string
-  perks: string[]
-}
-
-const tiers: Tier[] = [
-  {
-    id: 'listener',
-    name: 'Listener',
-    price: 'Free',
-    tagline: 'Stream with ads, follow artists',
-    perks: ['Standard audio quality', 'Ad-supported', 'Follow artists & curators'],
-  },
-  {
-    id: 'premium',
-    name: 'Premium',
-    price: '$9.99/mo',
-    tagline: 'Ad-free, direct artist support',
-    perks: ['Ad-free, lossless streaming', 'Royalties settled per play', 'Offline listening'],
-  },
-  {
-    id: 'founding',
-    name: 'Founding Fan',
-    price: '$19.99/mo',
-    tagline: 'Everything, plus governance',
-    perks: [
-      'Everything in Premium',
-      'Monthly SOUND token airdrop',
-      'Vote on DAO proposals',
-      'Early access to royalty-share NFT drops',
-    ],
-  },
-]
+import { subscriptionTiers } from '@/lib/data'
 
 const steps = ['Account', 'Wallet', 'Plan', 'Done']
 
@@ -63,7 +27,7 @@ export default function OnboardingFlow() {
     'w-full rounded-[10px] border border-hairline bg-surface-2 px-[14px] py-[10px] text-[13.5px] text-ivory placeholder:text-smoke focus:outline-none focus:ring-1 focus:ring-bronze'
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-[480px] flex-col justify-center px-6 py-16">
+    <div className="mx-auto flex min-h-screen w-full max-w-[480px] flex-col justify-center px-4 py-10 sm:px-6 md:py-16">
       <div className="mb-10 flex items-center justify-center gap-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-gradient-to-br from-bronze to-[#8a6a26] font-serif text-[14px] font-semibold text-ink">
           S
@@ -71,7 +35,7 @@ export default function OnboardingFlow() {
         <span className="font-serif text-[17px]">SoundChain</span>
       </div>
 
-      <div className="mb-10 flex items-center justify-center">
+      <div className="mb-8 flex items-center justify-center md:mb-10">
         {steps.map((label, i) => (
           <div key={label} className="flex items-center">
             <div className="flex flex-col items-center gap-[6px]">
@@ -82,14 +46,16 @@ export default function OnboardingFlow() {
               >
                 {i < step ? <Check size={13} /> : i + 1}
               </div>
-              <span className={`text-[11px] ${i === step ? 'text-ivory' : 'text-smoke'}`}>{label}</span>
+              <span className={`hidden text-[11px] sm:block ${i === step ? 'text-ivory' : 'text-smoke'}`}>
+                {label}
+              </span>
             </div>
-            {i < steps.length - 1 && <div className="mx-[10px] mb-[18px] h-px w-8 bg-hairline" />}
+            {i < steps.length - 1 && <div className="mx-[6px] mb-[18px] h-px w-5 bg-hairline sm:mx-[10px] sm:w-8" />}
           </div>
         ))}
       </div>
 
-      <div className="rounded-2xl border border-hairline bg-surface p-8">
+      <div className="rounded-2xl border border-hairline bg-surface p-5 sm:p-8">
         {step === 0 && (
           <div>
             <h1 className="mb-2 font-serif text-[24px] font-normal">Create your account</h1>
@@ -156,7 +122,7 @@ export default function OnboardingFlow() {
             <p className="mb-6 text-[13.5px] text-smoke">You can upgrade or cancel anytime from your wallet.</p>
 
             <div className="flex flex-col gap-3">
-              {tiers.map((t) => (
+              {subscriptionTiers.map((t) => (
                 <button
                   key={t.id}
                   onClick={() => setTier(t.id)}
@@ -203,7 +169,7 @@ export default function OnboardingFlow() {
               </div>
               <div className="flex items-center justify-between text-[13px]">
                 <span className="text-smoke">Plan</span>
-                <span className="font-semibold">{tiers.find((t) => t.id === tier)?.name ?? 'Listener'}</span>
+                <span className="font-semibold">{subscriptionTiers.find((t) => t.id === tier)?.name ?? 'Free'}</span>
               </div>
             </div>
 

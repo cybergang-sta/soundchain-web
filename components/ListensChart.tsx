@@ -10,7 +10,7 @@ export default function ListensChart() {
   const [range, setRange] = useState<(typeof ranges)[number]>('Week')
 
   return (
-    <div className="rounded-2xl border border-hairline bg-surface p-[26px]">
+    <div className="rounded-2xl border border-hairline bg-surface p-5 md:p-[26px]">
       <div className="mb-5 flex items-center justify-between">
         <span className="text-[13px] font-semibold text-smoke">Listens over time</span>
         <div className="flex gap-[2px] rounded-lg bg-surface-2 p-[3px]">
