@@ -1,4 +1,4 @@
-# SoundChain — Web Mockup (Next.js)
+# SoundChain  Web Mockup (Next.js)
 
 A clickable UI mockup for SoundChain's web app, built with Next.js 14 (App Router),
 TypeScript, and Tailwind CSS, implementing the features from the SoundChain
