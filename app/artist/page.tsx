@@ -8,6 +8,7 @@ import DemographicsPanel from '@/components/DemographicsPanel'
 import EditorialPanel from '@/components/EditorialPanel'
 import UploadCards from '@/components/UploadCards'
 import MastersPanel from '@/components/MastersPanel'
+import RevenueReportCard from '@/components/RevenueReportCard'
 import { topListeners, editorialPlacements } from '@/lib/data'
 
 export default function ArtistPage() {
@@ -28,6 +29,9 @@ export default function ArtistPage() {
         <EditorialPanel placements={editorialPlacements} />
       </div>
       <MastersPanel />
+      <div className="mt-4 grid grid-cols-1 gap-4 md:mt-[22px] md:gap-[22px] lg:grid-cols-2">
+        <RevenueReportCard />
+      </div>
     </AppShell>
   )
 }

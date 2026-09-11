@@ -1,4 +1,4 @@
-import { royaltySplit } from '@/lib/data'
+import { royaltySplit, royaltyForecast } from '@/lib/data'
 
 export default function EarningsPanel() {
   const mine = royaltySplit.splits.find((s) => s.mine)
@@ -31,6 +31,15 @@ export default function EarningsPanel() {
             <span className={`text-[14px] font-semibold ${s.mine ? 'text-bronze' : ''}`}>{s.value}</span>
           </div>
         ))}
+      </div>
+
+      <div className="mt-4 rounded-[12px] border border-bronze/25 bg-bronze/[0.06] p-4">
+        <div className="mb-1 flex items-center justify-between">
+          <span className="text-[11.5px] font-semibold text-smoke">Projected {royaltyForecast.horizon}</span>
+          <span className="text-[12px] font-medium text-moss">↑ on-stream velocity</span>
+        </div>
+        <div className="text-[16px] font-semibold">{royaltyForecast.range}</div>
+        <div className="mt-1 text-[11px] leading-[1.45] text-smoke">{royaltyForecast.note}</div>
       </div>
 
       <button className="mt-5 w-full rounded-[10px] bg-bronze py-3 text-[13.5px] font-semibold text-ink">

@@ -21,9 +21,9 @@ export default function Rail({ mode }: { mode: Mode }) {
         <div className={item(false)}>
           <Search size={19} />
         </div>
-        <div className={item(false)}>
+        <Link href="/" className={item(false)}>
           <ListMusic size={19} />
-        </div>
+        </Link>
         <Link href="/videos" className={item(mode === 'videos')}>
           <Film size={19} />
         </Link>

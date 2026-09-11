@@ -2,16 +2,18 @@ export type Playlist = {
   title: string
   meta: string
   tag: string
+  curator?: string
+  curatorCut?: string
   from: string
   to: string
 }
 
 export const risingPlaylists: Playlist[] = [
-  { title: 'Concrete & Silk', meta: 'R&B · 21 tracks', tag: 'Rising', from: '#7a5a2c', to: '#2a2213' },
-  { title: 'Analog Heartbeat', meta: 'Indie Folk · 18 tracks', tag: 'Rising', from: '#3d5a4a', to: '#182420' },
-  { title: 'Sub Bass Therapy', meta: 'Bass Music · 26 tracks', tag: 'Rising', from: '#5a3d5a', to: '#241826' },
-  { title: 'Neon Alley', meta: 'Synthwave · 15 tracks', tag: 'New', from: '#8a6a26', to: '#3a2c10' },
-  { title: 'Dust & Vinyl', meta: 'Soul · 30 tracks', tag: 'Rising', from: '#3a4a5a', to: '#181f26' },
+  { title: 'Concrete & Silk', meta: 'R&B · 21 tracks', tag: 'Rising', curator: 'Community', curatorCut: '1% of streams', from: '#7a5a2c', to: '#2a2213' },
+  { title: 'Analog Heartbeat', meta: 'Indie Folk · 18 tracks', tag: 'Rising', curator: 'Théo Marchand', curatorCut: '1% of streams', from: '#3d5a4a', to: '#182420' },
+  { title: 'Sub Bass Therapy', meta: 'Bass Music · 26 tracks', tag: 'Rising', curator: 'Nia Fontaine', curatorCut: '1% of streams', from: '#5a3d5a', to: '#241826' },
+  { title: 'Neon Alley', meta: 'Synthwave · 15 tracks', tag: 'New', curator: 'Aiko Tanaka', curatorCut: '1% of streams', from: '#8a6a26', to: '#3a2c10' },
+  { title: 'Dust & Vinyl', meta: 'Soul · 30 tracks', tag: 'Rising', curator: 'Marlowe Reed', curatorCut: '0.5% of streams', from: '#3a4a5a', to: '#181f26' },
 ]
 
 export type Folder = {
@@ -67,15 +69,37 @@ export type RoyaltyShare = {
   artist: string
   track: string
   share: string
+  playChange?: string
+  firstFan?: boolean
   from: string
   to: string
 }
 
 export const royaltyShares: RoyaltyShare[] = [
-  { artist: 'Marlowe Reed', track: 'Undertow', share: '2.4% of plays', from: '#7a5a2c', to: '#2a2213' },
-  { artist: 'Nia Fontaine', track: 'Static Bloom', share: '1.1% of plays', from: '#3d5a4a', to: '#182420' },
-  { artist: 'Kwame Osei', track: 'Harmattan', share: '3.8% of plays', from: '#5a3d5a', to: '#241826' },
+  { artist: 'Marlowe Reed', track: 'Undertow', share: '2.4% of plays', playChange: '+12% plays this month', firstFan: true, from: '#7a5a2c', to: '#2a2213' },
+  { artist: 'Nia Fontaine', track: 'Static Bloom', share: '1.1% of plays', playChange: '+8% plays this month', from: '#3d5a4a', to: '#182420' },
+  { artist: 'Kwame Osei', track: 'Harmattan', share: '3.8% of plays', playChange: '+21% plays this month', firstFan: true, from: '#5a3d5a', to: '#241826' },
 ]
+
+export const royaltyPortfolio = {
+  accruedAllTime: '$214.80',
+  accruedThisCycle: '$4.12',
+}
+
+export const royaltyForecast = {
+  range: '$1,420 - $1,960',
+  horizon: 'next 30 days',
+  note: 'Based on stream velocity, seasonality, and pending placements',
+}
+
+export const revenueReportCard = {
+  public: true,
+  lifetimeEarnings: '$48,291.40',
+  lifetimeStreams: '4.2M',
+  nftHolders: '1,204',
+  onChainSplits: '12',
+  disputes: 0,
+}
 
 export type Proposal = {
   title: string

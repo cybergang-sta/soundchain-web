@@ -49,9 +49,18 @@ export default function NowPlayingBar() {
 
       <TipButton />
 
-      <div className="hidden items-center gap-[7px] whitespace-nowrap border-l border-hairline pl-5 text-[11px] text-moss xl:flex">
-        <span className="royalty-dot h-[6px] w-[6px] rounded-full bg-moss" />
-        Supporting Marlowe Reed · +$0.0021 · settled on-chain instantly
+      <div className="hidden items-center gap-[10px] whitespace-nowrap border-l border-hairline pl-5 text-[11px] text-moss xl:flex">
+        <div className="flex h-[14px] items-end gap-[2px]">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <span
+              key={i}
+              className="sound-bar h-full w-[2px] rounded-full bg-moss"
+              style={{ animationDelay: `${i * 0.13}s` }}
+            />
+          ))}
+        </div>
+        <span>Supporting Marlowe Reed · +$0.0021 · settled on-chain instantly</span>
+        <span className="text-[10.5px] text-smoke">· Content ID disputes: 0</span>
       </div>
     </div>
   )

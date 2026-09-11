@@ -18,6 +18,11 @@ export default function PlaylistRail({ title, playlists }: { title: string; play
               <span className="absolute left-[10px] top-[10px] rounded-full border border-white/15 bg-ink/65 px-[9px] py-1 text-[10.5px] font-semibold backdrop-blur-sm">
                 {p.tag}
               </span>
+              {p.curator && (
+                <span className="absolute bottom-[10px] left-[10px] rounded-full border border-white/15 bg-ink/65 px-[9px] py-1 text-[10.5px] font-medium text-ivory backdrop-blur-sm">
+                  {p.curator} · {p.curatorCut}
+                </span>
+              )}
             </div>
             <div className="mb-[3px] text-[14px] font-semibold">{p.title}</div>
             <div className="text-[12px] text-smoke">{p.meta}</div>

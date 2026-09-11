@@ -13,10 +13,10 @@ export default function BottomNav({ mode }: { mode: Mode }) {
         <Home size={18} />
         Home
       </Link>
-      <div className={item(false)}>
+      <Link href="/" className={item(false)}>
         <ListMusic size={18} />
         Library
-      </div>
+      </Link>
       <Link href="/videos" className={item(mode === 'videos')}>
         <Film size={18} />
         Video
